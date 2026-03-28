@@ -18,8 +18,8 @@ export default function Header({ renderHomePageBtn = false }: HeaderProps): Reac
             </div>
 
             <h1 className="flex-1 text-center text-lg text-gold font-semibold">
-            ♠ BLACKJACK BY ALEXANDER ♥
-            <div className="absolute left-1/2 w-1/2 h-1 -translate-x-1/2 bg-gradient-to-r from-transparent via-gold to-transparent mt-2"></div>
+                ♠ BLACKJACK BY ALEXANDER ♥
+                <div className="absolute left-1/2 w-1/2 h-1 -translate-x-1/2 bg-gradient-to-r from-transparent via-gold to-transparent mt-2"></div>
             </h1>
 
         </div>
