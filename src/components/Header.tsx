@@ -12,7 +12,7 @@ export default function Header({ renderHomePageBtn = false }: HeaderProps): Reac
             <div className="w-28"> {/* Preallocate space to prevent layout shift */}
             {renderHomePageBtn && (
                 <Link to="/" className="text-gold p-1 px-2 border-2 border-gold bg-transparent font-semibold text-sm rounded transition-colors duration-300 hover:bg-darkgrey hover:text-gold">
-                <span>Return Home</span>
+                    <span>Return Home</span>
                 </Link>
             )}
             </div>
