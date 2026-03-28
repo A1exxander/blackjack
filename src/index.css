@@ -1,1 +1,16 @@
 @import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-darkgreen: #0d4a2f;
+  --color-gold:       #d4af37;
+  --color-gold-light: #f5d86e;
+  --color-darkgrey:  #2e2d2d;
+  --color-offwhite:  #ede6d2;
+
+  /* Breakpoints (max-width, mobile-first reversed) */
+  --breakpoint-sm: 639px;
+  --breakpoint-md: 767px;
+  --breakpoint-lg: 1023px;
+  --breakpoint-xl: 1279px;
+}
