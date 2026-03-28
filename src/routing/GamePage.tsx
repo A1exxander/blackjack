@@ -1,10 +1,10 @@
 import { Body } from "./Body"
 
-export default function Game(): React.ReactElement {
+export default function GamePage(): React.ReactElement {
     return (
         <Body>
             <main>
-                <h2 className="sr-only">Game Page</h2>
+                <h2 className = "sr-only">Game Page</h2>
             </main>
         </Body>
     );
