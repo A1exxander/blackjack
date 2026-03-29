@@ -19,5 +19,10 @@
 
 body {
   font-family: var(--font-display);
-  overflow: hidden;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  object-fit: cover;
 }

@@ -29,7 +29,7 @@ export default function SettingsPage(): React.ReactElement {
                     },
                 }}
             />
-            <main className="h-full flex flex-col items-center">
+            <main className="flex flex-col items-center">
                 <h2 className="text-lg lg:text-xl text-offwhite pt-4 font-semibold tracking-widest">SETTINGS</h2>
                 <Fieldset className="w-full max-w-md flex flex-col gap-6 pt-10 px-6">
                     <Field>

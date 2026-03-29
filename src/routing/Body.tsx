@@ -10,7 +10,7 @@ interface BodyProps {
 export function Body({children}: BodyProps): React.ReactElement {
     const location:Location = useLocation();
     return (
-        <div className="h-screen w-screen bg-darkgreen"> {/* Body is already provided by React */}
+        <div className="overflow-y-scroll flex justify-center items-center flex-col h-screen w-screen bg-darkgreen"> {/* Body is already provided by React */}
             <Header renderHomePageBtn={!isHomePage(location.pathname)} />
             {children}
         </div>
