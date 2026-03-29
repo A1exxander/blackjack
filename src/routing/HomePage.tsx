@@ -17,8 +17,8 @@ export default function HomePage(): React.ReactElement {
         <main className="w-full flex-1 flex flex-col items-center bg-darkgreen">
             <h2 className="sr-only">Home Page</h2>
             <section className="flex flex-col items-center justify-center gap-7">
-                <h3 className="pt-5 text-lg lg:text-xl text-offwhite font-semibold tracking-widest">
-                    Welcome {username}
+                <h3 className="pt-6 text-lg lg:text-xl text-offwhite font-semibold tracking-widest">
+                    WELCOME {username.toUpperCase()}
                 </h3>
                 <img
                     src={VanillaAndLucasImage}
