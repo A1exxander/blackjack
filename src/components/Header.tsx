@@ -9,19 +9,19 @@ export default function Header({ renderHomePageBtn = false }: HeaderProps): Reac
     return (
         <header>
             <div className="flex items-center gap-2 p-4 justify-between">
-                <div className=" flex justify-start flex-shrink-0 order-last sm:order-first w-24 sm:w-36"> {/* Preallocate space to prevent layout shift when button appears */}
+                <div className="flex justify-start flex-shrink-0 order-last sm:order-first w-24 sm:w-36"> {/* Preallocate space to prevent layout shift when button appears */}
                     {renderHomePageBtn && (
-                        <StyledLink variant="gold-button">
+                        <StyledLink variant="gold-button" route = "/">
                             <span className="before:content-['Home'] sm:before:content-['Return_Home'] text-center text-sm md:text-md" />
                         </StyledLink>
                     )}
                 </div>
-                <h1 className="order-first sm:order-none font-display flex-1 text-center text-xl lg:text-2xl text-gold font-semibold tracking-wide">
+                <h1 className="font-display text-lg order-first sm:order-none font-display flex-1 text-center text-xl lg:text-2xl text-gold font-semibold tracking-wide">
                     ♠ BLACKJACK BY ALEXANDER ♥
                 </h1>
                 <div className="hidden sm:block w-24 sm:w-36 flex-shrink-0" aria-hidden="true" /> {/* Right mirror slot — desktop only, keeps title centered */}
             </div>
-            <UnderlineEffect color="gold" />
+            <div className={`absolute left-1/2 w-full h-1 -translate-x-1/2 bg-gradient-to-r from-transparent via-gold to-transparent`}></div>
         </header>
     );
 }
