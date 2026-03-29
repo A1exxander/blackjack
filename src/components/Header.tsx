@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import StyledLink from "./StyledLink";
+import UnderlineEffect from "./UnderlineEffect";
 
 interface HeaderProps {
   renderHomePageBtn?: boolean;
@@ -6,24 +7,21 @@ interface HeaderProps {
 
 export default function Header({ renderHomePageBtn = false }: HeaderProps): React.ReactElement {
     return (
-    <header>
-        <div className="flex px-2 py-4 items-center">
-
-            <div className="w-32"> {/* Preallocate space to prevent layout shift */}
-                {renderHomePageBtn && (
-                    <Link to="/" className="text-gold p-1 px-2 border-2 border-gold bg-transparent font-semibold text-md rounded transition-colors duration-300 hover:bg-darkgrey hover:text-gold">
-                        <span>Return Home</span>
-                    </Link>
-                )}
+        <header>
+            <div className="flex items-center gap-2 p-4 justify-between">
+                <div className=" flex justify-start flex-shrink-0 order-last sm:order-first w-24 sm:w-36"> {/* Preallocate space to prevent layout shift when button appears */}
+                    {renderHomePageBtn && (
+                        <StyledLink variant="gold-button">
+                            <span className="before:content-['Home'] sm:before:content-['Return_Home'] text-center text-sm md:text-md" />
+                        </StyledLink>
+                    )}
+                </div>
+                <h1 className="order-first sm:order-none font-display flex-1 text-center text-xl lg:text-2xl text-gold font-semibold tracking-wide">
+                    ♠ BLACKJACK BY ALEXANDER ♥
+                </h1>
+                <div className="hidden sm:block w-24 sm:w-36 flex-shrink-0" aria-hidden="true" /> {/* Right mirror slot — desktop only, keeps title centered */}
             </div>
-
-            <h1 className="font-display flex-1 text-center text-2xl text-gold font-semibold">
-                ♠ BLACKJACK BY ALEXANDER ♥
-                <div className="absolute left-1/2 w-1/2 h-1 -translate-x-1/2 bg-gradient-to-r from-transparent via-gold to-transparent mt-2"></div>
-            </h1>
-
-        </div>
-    </header>
-  );
-
+            <UnderlineEffect color="gold" />
+        </header>
+    );
 }
