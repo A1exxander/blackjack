@@ -17,7 +17,7 @@ export default function HomePage(): React.ReactElement {
         <main className="w-full flex-1 flex flex-col items-center bg-darkgreen">
             <h2 className="sr-only">Home Page</h2>
             <section className="flex flex-col items-center justify-center gap-7">
-                <h3 className="pt-6 text-lg lg:text-xl text-offwhite font-semibold tracking-widest">
+                <h3 className="pt-6 text-lg lg:text-xl text-offwhite font-semibold">
                     WELCOME {username.toUpperCase()}
                 </h3>
                 <img
@@ -25,12 +25,17 @@ export default function HomePage(): React.ReactElement {
                     alt="The greatest dogs to ever live"
                     className="rounded-lg shadow-md w-full max-w-4xl max-h-[50vh] object-cover object-top"
                 />
-                <Link
-                    className="text-gold p-2 px-32 mb-5 border-2 border-gold bg-transparent font-semibold text-md rounded transition-colors duration-300 hover:bg-darkgrey hover:text-gold"
-                    to={`/game/${gameID}`}
-                >
-                    <span>Start Game</span>
-                </Link>
+                <div className = "flex flex-col ">
+                    <Link
+                        className="text-center mb-4 cursor-pointer text-gold p-1 px-2 border-2 border-gold bg-transparent font-semibold text-md rounded transition-colors duration-300 hover:bg-darkgrey hover:text-gold"
+                        to={`/game/${gameID}`}
+                    >
+                        <span>START GAME</span>
+                    </Link>
+                    <p className = "text-center mt-2 px-2 bg-black flex-1 text-offwhite text-md italic font-semibold ">
+                        PLAY TOGETHER, PLAY FOREVER
+                    </p>
+                </div>
             </section>
             <div className="mt-auto">
                 <Footer />

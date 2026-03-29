@@ -1,28 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 @import "tailwindcss";
 
 @theme {
-  /* Colors */
   --color-darkgreen: #0d4a2f;
   --color-gold:       #d4af37;
   --color-gold-light: #f5d86e;
   --color-darkgrey:  #2e2d2d;
   --color-offwhite:  #ede6d2;
-
-  --font-display: "Playfair Display", Georgia, serif;
-
-  /* Breakpoints (max-width, mobile-first reversed) */
-  --breakpoint-sm: 639px;
-  --breakpoint-md: 767px;
-  --breakpoint-lg: 1023px;
-  --breakpoint-xl: 1279px;
 }
 
-body {
-  font-family: var(--font-display);
-  overflow-x: hidden;
-}
+@layer base {
+  body {
+    font-family: "Playfair Display", Georgia, serif;
+    overflow-x: hidden;
+    letter-spacing: 0.115rem;
+  }
 
-img {
-  max-width: 100%;
-  object-fit: cover;
+  img {
+    max-width: 100%;
+    object-fit: cover;
+  }
 }

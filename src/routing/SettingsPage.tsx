@@ -23,14 +23,14 @@ export default function SettingsPage(): React.ReactElement {
                 toastOptions={{
                     classNames: {
                         toast: "border border-offwhite/20 text-offwhite rounded",
-                        title: "text-offwhite text-sm font-semibold",
-                        description: "text-offwhite text-xs",
+                        title: "tracking-normal font-display text-offwhite text-sm font-semibold",
+                        description: "tracking-normal text-offwhite text-xs font-display",
                         icon: "text-gold",
                     },
                 }}
             />
-            <main className="flex flex-col items-center">
-                <h2 className="text-lg lg:text-xl text-offwhite pt-6 font-semibold tracking-widest">SETTINGS</h2>
+            <main className="flex flex-col items-center bg-darkgreen">
+                <h2 className="text-lg lg:text-xl text-offwhite pt-6 font-semibold">SETTINGS</h2>
                 <Fieldset className="w-full max-w-md flex flex-col gap-6 pt-10 px-6">
                     <Field>
                         <Label className="block text-offwhite text-sm tracking-wide mb-2">Username</Label>
@@ -44,9 +44,9 @@ export default function SettingsPage(): React.ReactElement {
                     </Field>
                     <Button
                         onClick={handleSave}
-                        className="cursor-pointer text-gold p-1 px-2 border-2 border-gold bg-transparent font-semibold text-md rounded transition-colors duration-300 hover:bg-darkgrey hover:text-gold"
+                        className="cursor-pointer text-gold mb-6 p-1 px-2 border-2 border-gold bg-transparent font-semibold text-md rounded transition-colors duration-300 hover:bg-darkgrey hover:text-gold"
                     >
-                        <span>Save Changes</span>
+                        <span>SAVE CHANGES</span>
                     </Button>
                 </Fieldset>
             </main>
