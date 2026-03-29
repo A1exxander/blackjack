@@ -21,7 +21,7 @@ export default function Header({ renderHomePageBtn = false }: HeaderProps): Reac
                 </h1>
                 <div className="hidden sm:block w-24 sm:w-36 flex-shrink-0" aria-hidden="true" /> {/* Right mirror slot — desktop only, keeps title centered */}
             </div>
-            <div className={`absolute left-1/2 w-full h-1 -translate-x-1/2 bg-gradient-to-r from-transparent via-gold to-transparent`}></div>
+            <UnderlineEffect />
         </header>
     );
 }

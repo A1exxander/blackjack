@@ -3,6 +3,7 @@ import { Body } from "./Body";
 import { generateUUID } from "../utils/UUIDUtils";
 import { Link } from "react-router-dom";
 import useUsernameStore from "../store/useSettingsStore";
+import Footer from "../components/Footer";
 
 export default function HomePage(): React.ReactElement {
 
@@ -20,12 +21,7 @@ export default function HomePage(): React.ReactElement {
                         <span>Start Game</span>
                     </Link>
                 </section>
-              <footer className="w-full flex-1 flex flex-col items-center">
-                <div className="absolute left-1/2 w-full h-1 -translate-x-1/2 bg-gradient-to-r from-transparent via-gold to-transparent"></div>
-                <Link className="pt-8 w-fit text-center" to="/settings">
-                    <span className="text-offwhite text-md transition-colors duration-300 hover:text-gold">Settings</span>
-                </Link>
-            </footer>
+                <Footer />
             </main>
         </Body>
     );
