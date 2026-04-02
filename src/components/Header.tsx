@@ -17,7 +17,7 @@ export default function Header({ renderHomePageBtn = false }: HeaderProps): Reac
                     )}
                 </div>
                 <h1 className="text-lg order-first sm:order-none flex-1 text-center text-xl lg:text-2xl text-gold font-semibold tracking-wide">
-                    ♠ BLACKJACK BY ALEXANDER ♥ IN LOVING MEMORY OF VANILLA & LUCAS
+                    ♠ BLACKJACK BY ALEXANDER ♥ FOR LUCAS AND VANILLA
                 </h1>
                 <div className="hidden sm:block w-24 sm:w-36 flex-shrink-0" aria-hidden="true" /> {/* Right mirror slot — desktop only, keeps title centered */}
             </div>

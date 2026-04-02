@@ -1,1 +1,2 @@
-export type Player = "PLAYER" | "OPPONENT";
+export type GameState = "PLAYER_TURN" | "OPPONENT_TURN" | "GAME_FINISHED";
+export type GameResult = "WON" | "LOST" | "TIED";
