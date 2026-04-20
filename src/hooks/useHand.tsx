@@ -14,6 +14,14 @@ export interface UseHandResponse {
 }
 
 export default function useHand({ initialHand }: UseHandProps = {}): UseHandResponse {
+    
+    const generateHand = (): number[] => {
+        const newHand: number[] =  [
+            genRandomNum(MINIMUM_CARD_VALUE, MAXIMUM_CARD_VALUE),
+            genRandomNum(MINIMUM_CARD_VALUE, MAXIMUM_CARD_VALUE)
+        ];  
+        return newHand;
+    }
 
     const [hand, setHand] = useState<number[]>(() => // Cleaner than setting it as default, which is only better for simple logic 
         initialHand ?? generateHand()
@@ -29,14 +37,6 @@ export default function useHand({ initialHand }: UseHandProps = {}): UseHandResp
 
     const resetHand = (): void => {
         setHand(generateHand());
-    }
-
-    const generateHand = (): number[] => {
-        const newHand: number[] =  [
-            genRandomNum(MINIMUM_CARD_VALUE, MAXIMUM_CARD_VALUE),
-            genRandomNum(MINIMUM_CARD_VALUE, MAXIMUM_CARD_VALUE)
-        ];  
-        return newHand;
     }
 
     return { hand, handTotal, resetHand, drawCard };
