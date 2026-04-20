@@ -13,9 +13,9 @@ export interface GameLogic {
     playerName: string;
     opponentName: string;
     opponentHand: number[];
-    opponentHandTotal: number;
+    opponentScore: number;
     playerHand: number[];
-    playerHandTotal: number;
+    playerScore: number;
     gameState: GameState;
     gameResult: GameResult | null;
 }
@@ -25,8 +25,8 @@ export default function useGameLogic(): GameLogic {
     const playerName: string = useUsernameStore((state) => state.username);
     const opponentName: string = useOpponentName(playerName);
 
-    const { hand: playerHand, handTotal: playerHandTotal, resetHand: resetPlayerHand, drawCard: drawPlayerCard }: UseHandResponse = useHand();
-    const { hand: opponentHand, handTotal: opponentHandTotal, resetHand: resetOpponentHand, drawCard: drawOpponentCard }: UseHandResponse = useHand();
+    const { hand: playerHand, handTotal: playerScore, resetHand: resetPlayerHand, drawCard: drawPlayerCard }: UseHandResponse = useHand();
+    const { hand: opponentHand, handTotal: opponentScore, resetHand: resetOpponentHand, drawCard: drawOpponentCard }: UseHandResponse = useHand();
 
     const [gameState, setGameState] = useState<GameState>("PLAYER_TURN");
     const [gameResult, setGameResult] = useState<GameResult | null>(null);
@@ -43,9 +43,9 @@ export default function useGameLogic(): GameLogic {
     const handlePlayerHit = (): void => {
         const newCardValue: number = genRandomNum(MINIMUM_CARD_VALUE, MAXIMUM_CARD_VALUE);
         drawPlayerCard(newCardValue);
-        const newTotal: number = playerHandTotal + newCardValue;
+        const newTotal: number = playerScore + newCardValue;
         if (newTotal >= BLACKJACK) {
-            evaluateGameResult(newTotal, opponentHandTotal);
+            evaluateGameResult(newTotal, opponentScore);
             setGameState("GAME_FINISHED");
         }
     };
@@ -53,12 +53,12 @@ export default function useGameLogic(): GameLogic {
     const handlePlayerStand = async (): Promise<void> => {
         setGameState("OPPONENT_TURN");
         const finalOpponentTotal: number = await playOpponentTurn();
-        evaluateGameResult(playerHandTotal, finalOpponentTotal);
+        evaluateGameResult(playerScore, finalOpponentTotal);
         setGameState("GAME_FINISHED");
     };
 
     const playOpponentTurn = async (): Promise<number> => {
-        let currentTotal = opponentHandTotal;
+        let currentTotal = opponentScore;
         while (currentTotal < OPPONENT_STAND_VALUE) {
             const newCard = genRandomNum(1, 10);
             drawOpponentCard(newCard);
@@ -79,5 +79,6 @@ export default function useGameLogic(): GameLogic {
         return setGameResult("TIED");
     };
 
-    return { handleGameStart, playerName, opponentName, playerHand, playerHandTotal, opponentHand, opponentHandTotal, handlePlayerHit, handlePlayerStand, gameState, gameResult };
+    return {handleGameStart, playerName, opponentName, playerHand, playerScore, opponentHand, opponentScore, handlePlayerHit, handlePlayerStand, gameState, gameResult};
+
 }

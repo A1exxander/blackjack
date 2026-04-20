@@ -32,7 +32,7 @@ export default function HomePage(): React.ReactElement {
                     >
                         <span>START GAME</span>
                     </Link>
-                    <p className = "text-center mt-2 px-2 bg-black flex-1 text-offwhite text-md italic font-semibold ">
+                    <p className = "text-center mt-2 px-2 bg-black flex-1 text-offwhite text-md italic font-semibold">
                         PLAY TOGETHER, PLAY FOREVER
                     </p>
                 </div>
