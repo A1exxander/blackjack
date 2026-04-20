@@ -13,7 +13,9 @@ export interface GameLogic {
     playerName: string;
     opponentName: string;
     opponentHand: number[];
+    opponentHandTotal: number;
     playerHand: number[];
+    playerHandTotal: number;
     gameState: GameState;
     gameResult: GameResult | null;
 }
@@ -77,5 +79,5 @@ export default function useGameLogic(): GameLogic {
         return setGameResult("TIED");
     };
 
-    return { handleGameStart, playerName, opponentName, playerHand, opponentHand, handlePlayerHit, handlePlayerStand, gameState, gameResult };
+    return { handleGameStart, playerName, opponentName, playerHand, playerHandTotal, opponentHand, opponentHandTotal, handlePlayerHit, handlePlayerStand, gameState, gameResult };
 }
