@@ -1,3 +1,1 @@
-export const isHomePage = (location: string): boolean => {
-    return location === '/'
-}
+export const isHomePage = (location: string): boolean => return location === '/';
